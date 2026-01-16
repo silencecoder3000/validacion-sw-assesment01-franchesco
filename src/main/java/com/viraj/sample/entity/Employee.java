@@ -1,6 +1,7 @@
 package com.viraj.sample.entity;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 
@@ -14,9 +15,11 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long employeeId;
 
+    @Getter
     @Column(name = "EMPLOYEE_NAME")
     private String employeeName;
 
+    @Getter
     @Column(name = "EMPLOYEE_DESCRIPTION")
     private String employeeDescription;
 
@@ -28,16 +31,8 @@ public class Employee {
         this.employeeDescription = employeeDescription;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
-    }
-
-    public String getEmployeeDescription() {
-        return employeeDescription;
     }
 
     public void setEmployeeDescription(String employeeDescription) {
